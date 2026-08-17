@@ -1,0 +1,56 @@
+PERFUMARIA SUTAN — VERSÃO PRONTA PARA VERCEL
+
+1) GITHUB
+Na raiz do repositório deixe exatamente:
+index.html
+package.json
+vercel.json
+supabase-schema.sql
+logo-sultan.jpeg
+api/
+
+NÃO coloque a pasta inteira dentro de outra pasta.
+O index.html deve ficar na raiz.
+
+2) VERCEL
+Ao importar o GitHub:
+Framework Preset: Other
+Root Directory: .
+Build Command: deixe vazio
+Output Directory: deixe vazio
+Install Command: npm install
+
+3) ENVIRONMENT VARIABLES
+Crie na Vercel:
+SUPABASE_URL = URL do projeto Supabase
+SUPABASE_ANON_KEY = chave anon/publishable do Supabase
+SUPABASE_SERVICE_ROLE_KEY = chave service_role do Supabase
+ADMIN_EMAIL = e-mail administrativo (opcional)
+
+A service_role NUNCA deve ser colocada no index.html.
+
+4) SUPABASE
+Abra o SQL Editor e execute o arquivo supabase-schema.sql UMA VEZ.
+
+5) AUTH
+O site já usa o Supabase Auth.
+Criar conta:
+- cria o usuário;
+- grava nome/e-mail no perfil;
+- se o e-mail já existir, informa que já existe;
+- se a confirmação de e-mail estiver desativada, entra automaticamente.
+
+Login:
+- se o e-mail não existir, informa: "Esta conta não existe. Clique em Criar conta";
+- se existir e a senha estiver correta, entra;
+- se existir e a senha estiver errada, informa que a senha está incorreta.
+
+6) DEPOIS DE CONFIGURAR
+Faça Deploy/Redeploy na Vercel.
+Se o projeto antigo estiver com configuração Python, apague/recrie o deployment apontando para este repositório ou ajuste Framework Preset para Other.
+
+7) TESTE
+Abra:
+SEU-DOMINIO/api/config
+Deve aparecer um JSON com supabaseUrl e publishableKey.
+Depois abra o site e teste Criar conta e Entrar.

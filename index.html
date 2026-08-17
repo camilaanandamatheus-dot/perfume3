@@ -1,0 +1,4287 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perfumaria Sutan | Essência & Elegância</title>
+
+<style>
+:root {
+    --preto: #171311;
+    --preto2: #241e1a;
+    --preto3: #302721;
+    --dourado: #c9a15a;
+    --dourado-claro: #e4c78e;
+    --creme: #f8f4ee;
+    --branco: #fff;
+    --cinza: #777;
+    --verde: #25d366;
+    --vermelho: #b33;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--creme);
+    color: var(--preto);
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(23,19,17,.97);
+    backdrop-filter: blur(12px);
+    color: white;
+    border-bottom: 1px solid rgba(201,161,90,.25);
+}
+
+.header {
+    max-width: 1250px;
+    min-height: 75px;
+    margin: auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--dourado-claro);
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span {
+    display: block;
+    color: #aaa;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    padding: 10px 0;
+    transition: .3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+    width: 0;
+    height: 1px;
+    background: var(--dourado);
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--dourado-claro);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #50463f;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    position: relative;
+    transition: .3s;
+}
+
+.icon-btn:hover {
+    border-color: var(--dourado);
+    color: var(--dourado-claro);
+    transform: translateY(-2px);
+}
+
+.cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--dourado);
+    color: var(--preto);
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* MENU MOBILE */
+
+.menu-mobile {
+    display: none;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 680px;
+    background:
+        linear-gradient(90deg, rgba(18,13,11,.96), rgba(18,13,11,.58)),
+        url("https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 50%,
+        rgba(201,161,90,.08)
+    );
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 1250px;
+    width: 100%;
+    margin: auto;
+    padding: 80px 25px;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-small {
+    color: var(--dourado-claro);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 12px;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1.02;
+    margin: 20px 0;
+}
+
+.hero h1 strong {
+    color: var(--dourado-claro);
+}
+
+.hero p {
+    max-width: 570px;
+    color: #ddd;
+    line-height: 1.8;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 28px;
+    background: var(--dourado);
+    color: var(--preto);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--dourado-claro);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201,161,90,.18);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--dourado);
+    color: var(--dourado-claro);
+}
+
+.btn-outline:hover {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+/* ================= BENEFÍCIOS ================= */
+
+.features {
+    background: var(--branco);
+    border-bottom: 1px solid #eee;
+}
+
+.features-grid {
+    max-width: 1250px;
+    margin: auto;
+    padding: 30px 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.feature {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.feature-icon {
+    font-size: 27px;
+}
+
+.feature h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.feature p {
+    font-size: 12px;
+    color: var(--cinza);
+}
+
+/* ================= SEÇÕES ================= */
+
+.section {
+    max-width: 1250px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-header span {
+    color: #a47b38;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-header h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin-top: 10px;
+}
+
+.section-header p {
+    color: var(--cinza);
+    margin: 12px auto;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* ================= DESTAQUES ================= */
+
+.featured {
+    background: #fff;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.featured-card {
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.featured-card:hover img {
+    transform: scale(1.06);
+}
+
+.featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.85)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+}
+
+.featured-overlay span {
+    color: var(--dourado-claro);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.featured-overlay h3 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    margin: 6px 0;
+}
+
+.featured-overlay p {
+    font-size: 14px;
+    color: #ddd;
+}
+
+/* ================= LOJA ================= */
+
+.shop-tools {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    background: white;
+    transition: .3s;
+}
+
+.search-box input:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(201,161,90,.1);
+}
+
+select {
+    padding: 15px 18px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+    cursor: pointer;
+}
+
+/* ================= PRODUTOS ================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product {
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.1);
+}
+
+.product-img {
+    height: 290px;
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.product:hover .product-img img {
+    transform: scale(1.06);
+}
+
+.badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: var(--preto);
+    color: white;
+    padding: 7px 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.badge.gold {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+.favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,.92);
+    cursor: pointer;
+    font-size: 18px;
+    transition: .25s;
+}
+
+.favorite:hover {
+    transform: scale(1.1);
+}
+
+.favorite.active {
+    color: var(--vermelho);
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.category {
+    color: #a47b38;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+.product h3 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.product-description {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.5;
+    min-height: 40px;
+}
+
+.rating {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #c49b45;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.add {
+    background: var(--preto);
+    color: white;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.add:hover {
+    background: var(--dourado);
+    color: var(--preto);
+}
+
+.no-products {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 60px;
+    color: #777;
+}
+
+/* ================= BANNER ================= */
+
+.banner {
+    max-width: 1250px;
+    margin: 0 auto 80px;
+    padding: 75px;
+    background:
+        linear-gradient(90deg, rgba(23,19,17,.95), rgba(23,19,17,.6)),
+        url("https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    color: white;
+}
+
+.banner span {
+    color: var(--dourado-claro);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.banner h2 {
+    font-family: Georgia, serif;
+    font-size: 42px;
+    max-width: 600px;
+    margin: 15px 0 25px;
+}
+
+/* ================= SOBRE ================= */
+
+.about {
+    background: var(--preto);
+    color: white;
+}
+
+.about-grid {
+    max-width: 1250px;
+    margin: auto;
+    padding: 90px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-img {
+    height: 500px;
+    background:
+        url("https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+}
+
+.about-text span {
+    color: var(--dourado-claro);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 11px;
+}
+
+.about-text h2 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    margin: 15px 0 25px;
+}
+
+.about-text p {
+    color: #ccc;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+/* ================= AVALIAÇÕES ================= */
+
+.reviews {
+    background: #fff;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.review {
+    background: var(--creme);
+    padding: 30px;
+    border: 1px solid #eee;
+    position: relative;
+}
+
+.review-stars {
+    color: #c49b45;
+    margin-bottom: 15px;
+}
+
+.review p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.review strong {
+    display: block;
+    margin-top: 18px;
+    font-family: Georgia, serif;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter {
+    text-align: center;
+    background: #eee7de;
+}
+
+.newsletter-form {
+    max-width: 600px;
+    margin: 25px auto 0;
+    display: flex;
+}
+
+.newsletter-form input {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 16px;
+    outline: none;
+}
+
+.newsletter-form button {
+    border: none;
+    background: var(--preto);
+    color: white;
+    padding: 0 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #120f0d;
+    color: white;
+    padding: 55px 25px 25px;
+}
+
+.footer-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    font-family: Georgia, serif;
+    color: var(--dourado-claro);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--dourado-claro);
+}
+
+.footer-title {
+    color: white;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.copyright {
+    border-top: 1px solid #302925;
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* ================= CARRINHO ================= */
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 2000;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: min(430px, 100%);
+    height: 100vh;
+    background: white;
+    z-index: 3000;
+    transition: .35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-header {
+    background: var(--preto);
+    color: white;
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h2 {
+    font-family: Georgia, serif;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 13px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    font-family: Georgia, serif;
+    margin-bottom: 5px;
+}
+
+.cart-item-info p {
+    color: #777;
+    font-size: 13px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.quantity button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+}
+
+.remove {
+    border: none !important;
+    background: none !important;
+    color: var(--vermelho);
+    cursor: pointer;
+    font-size: 12px;
+    width: auto !important;
+}
+
+.cart-footer {
+    border-top: 1px solid #ddd;
+    padding: 20px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.checkout {
+    width: 100%;
+    background: var(--verde);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.checkout:hover {
+    filter: brightness(.92);
+    transform: translateY(-2px);
+}
+
+.empty-cart {
+    text-align: center;
+    color: #777;
+    padding: 60px 20px;
+}
+
+/* ================= MODAL ================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 4000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    width: min(800px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 6px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+    background: var(--preto);
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.modal-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.modal-product img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.modal-info {
+    padding: 50px 35px;
+}
+
+.modal-info span {
+    color: #a47b38;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.modal-info h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin: 10px 0 15px;
+}
+
+.modal-info p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.modal-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* ================= TOAST ================= */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 100px);
+    background: var(--preto);
+    color: white;
+    padding: 15px 22px;
+    border-radius: 5px;
+    z-index: 6000;
+    opacity: 0;
+    transition: .35s;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width: 1000px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-grid,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 700px) {
+
+    .header {
+        min-height: 70px;
+        padding: 12px 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .logo span {
+        font-size: 7px;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--preto);
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        border-top: 1px solid #302925;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-mobile {
+        display: block;
+        width: 42px;
+        height: 42px;
+        border: 1px solid #50463f;
+        background: transparent;
+        color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 19px;
+    }
+
+    .header-actions {
+        margin-left: auto;
+    }
+
+    .hero {
+        min-height: 620px;
+        text-align: center;
+    }
+
+    .hero-content {
+        padding: 60px 20px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-tools {
+        flex-direction: column;
+    }
+
+    .banner {
+        margin: 0 15px 60px;
+        padding: 45px 25px;
+    }
+
+    .banner h2 {
+        font-size: 32px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        padding: 65px 20px;
+    }
+
+    .about-img {
+        height: 350px;
+    }
+
+    .about-text h2 {
+        font-size: 38px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form button {
+        padding: 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-product {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-product img {
+        height: 300px;
+    }
+
+    .modal-info {
+        padding: 30px 25px;
+    }
+
+    .section {
+        padding: 65px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 34px;
+    }
+
+    .featured-card,
+    .featured-card img {
+        min-height: 280px;
+    }
+}
+
+
+/* ================= FAVORITOS + CHECKOUT ONLINE ================= */
+.favorite-count {
+    background: var(--vermelho);
+    color: white;
+}
+
+.favorites-panel .cart-header {
+    background: var(--preto2);
+}
+
+.favorite-item {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 13px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.favorite-item img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.favorite-item h4 {
+    font-family: Georgia, serif;
+    margin-bottom: 5px;
+}
+
+.favorite-item p {
+    color: #777;
+    font-size: 13px;
+}
+
+.favorite-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 9px;
+}
+
+.favorite-actions button {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.favorite-add {
+    background: var(--preto);
+    color: white;
+}
+
+.favorite-remove {
+    background: #f4e9e9;
+    color: var(--vermelho);
+}
+
+.checkout-secondary {
+    width: 100%;
+    margin-top: 9px;
+    border: 1px solid #ddd;
+    background: white;
+    color: var(--preto);
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.checkout-modal-content {
+    width: min(760px, 100%);
+    padding: 34px;
+}
+
+.checkout-title {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    padding-right: 45px;
+}
+
+.checkout-subtitle {
+    color: #777;
+    margin: 8px 0 22px;
+    line-height: 1.6;
+}
+
+.checkout-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #eee;
+    background: var(--creme);
+    padding: 16px 18px;
+    margin-bottom: 18px;
+}
+
+.checkout-summary strong {
+    font-size: 20px;
+}
+
+.checkout-message {
+    display: none;
+    padding: 13px 15px;
+    margin: 12px 0;
+    border-radius: 4px;
+    background: #fff5dd;
+    color: #6a4d15;
+    line-height: 1.5;
+}
+
+.checkout-message.show {
+    display: block;
+}
+
+.checkout-message.error {
+    background: #fbe8e8;
+    color: #8a2525;
+}
+
+.payment-loading {
+    text-align: center;
+    color: #777;
+    padding: 24px 10px;
+}
+
+#statusScreenBrick_container {
+    display: none;
+}
+
+@media(max-width: 700px) {
+    .checkout-modal-content {
+        padding: 25px 16px;
+    }
+
+    .checkout-title {
+        font-size: 27px;
+    }
+}
+
+
+
+/* ================= CONTA / LOGIN / PEDIDOS ================= */
+
+.account-button {
+    min-height: 42px;
+    border: 1px solid #50463f;
+    border-radius: 999px;
+    background: transparent;
+    color: white;
+    padding: 0 15px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s;
+    white-space: nowrap;
+}
+
+.account-button:hover {
+    border-color: var(--dourado);
+    color: var(--dourado-claro);
+    transform: translateY(-2px);
+}
+
+.account-button.logged {
+    border-color: rgba(201,161,90,.7);
+    background: rgba(201,161,90,.1);
+}
+
+.secure-order-note {
+    font-size: 11px;
+    line-height: 1.5;
+    color: #777;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.auth-modal-content,
+.order-created-content {
+    width: min(520px, 100%);
+    padding: 42px;
+}
+
+.account-modal-content {
+    width: min(720px, 100%);
+    padding: 42px;
+}
+
+.auth-brand,
+.order-eyebrow {
+    color: #a47b38;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.auth-modal-content h2,
+.order-created-content h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    margin: 9px 0 8px;
+}
+
+.auth-subtitle,
+.order-created-text {
+    color: #777;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.auth-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f3efe9;
+    padding: 4px;
+    border-radius: 7px;
+    margin: 25px 0 18px;
+}
+
+.auth-tab {
+    border: 0;
+    background: transparent;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 700;
+    color: #777;
+}
+
+.auth-tab.active {
+    background: white;
+    color: var(--preto);
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+}
+
+.auth-form {
+    display: grid;
+    gap: 15px;
+}
+
+.auth-form label {
+    display: grid;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.auth-form input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 14px 15px;
+    outline: none;
+    font-size: 14px;
+}
+
+.auth-form input:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(201,161,90,.1);
+}
+
+.auth-submit { width: 100%; margin-top: 5px; }
+.hidden { display: none !important; }
+
+.auth-message {
+    display: none;
+    margin-bottom: 15px;
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.5;
+    background: #f3efe9;
+}
+
+.auth-message.show { display: block; }
+.auth-message.error { background: #fff0f0; color: #922; }
+.auth-message.success { background: #eef8ef; color: #276c34; }
+
+.account-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.account-avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--preto);
+    color: var(--dourado-claro);
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+.account-head span {
+    color: #a47b38;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 9px;
+}
+
+.account-head h2 {
+    font-family: Georgia, serif;
+    margin: 4px 0;
+    font-size: 28px;
+}
+
+.account-head p { color: #777; font-size: 13px; }
+
+.account-actions {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+    padding: 22px 0;
+}
+
+.account-actions .btn { padding: 11px 15px; font-size: 12px; }
+
+.account-logout {
+    border: 0;
+    background: transparent;
+    color: #a33;
+    cursor: pointer;
+    padding: 10px 5px;
+    font-weight: 700;
+}
+
+.account-orders-title {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 6px 0 12px;
+}
+
+.account-orders-title h3 { font-family: Georgia, serif; font-size: 21px; }
+.account-orders-title span { color: #999; font-size: 10px; }
+
+.my-orders-list { display: grid; gap: 9px; max-height: 300px; overflow-y: auto; }
+.my-order {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.my-order-code { font-weight: 800; font-size: 13px; }
+.my-order-meta { color: #888; font-size: 11px; margin-top: 4px; }
+.my-order-total { text-align: right; font-weight: 800; font-size: 13px; }
+.order-status { display: inline-block; margin-top: 4px; font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #9a702e; }
+.muted-center { color: #888; text-align: center; padding: 20px; font-size: 13px; }
+
+.order-created-content { text-align: center; }
+.order-success-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #eaf7ed;
+    color: #27843c;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.order-code {
+    margin: 22px 0 12px;
+    background: #f3efe9;
+    border: 1px dashed #c9a15a;
+    padding: 17px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: clamp(20px, 6vw, 29px);
+    font-weight: 900;
+    letter-spacing: 1px;
+    user-select: all;
+}
+
+.order-created-total {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.order-created-actions { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; }
+
+
+
+/* ================= PAINEL ADMIN NO MESMO SITE ================= */
+.admin-modal-content {
+    width: min(1180px, 100%);
+    padding: 34px;
+}
+.admin-topline { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:22px; padding-right:42px; }
+.admin-topline span { color:#a47b38; text-transform:uppercase; letter-spacing:3px; font-size:9px; font-weight:800; }
+.admin-topline h2 { font-family:Georgia,serif; font-size:34px; margin-top:5px; }
+.admin-topline p { color:#777; font-size:12px; line-height:1.5; max-width:520px; }
+.admin-refresh { border:1px solid #ddd; background:white; padding:10px 13px; border-radius:4px; cursor:pointer; font-weight:700; }
+.admin-refresh:hover { border-color:var(--dourado); }
+.admin-metrics { display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:20px; }
+.admin-metric { border:1px solid #eee; background:#faf8f5; padding:15px; border-radius:6px; min-width:0; }
+.admin-metric span { display:block; color:#999; font-size:8px; text-transform:uppercase; letter-spacing:1px; margin-bottom:7px; }
+.admin-metric strong { display:block; font-size:21px; overflow:hidden; text-overflow:ellipsis; }
+.admin-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:16px; align-items:start; }
+.admin-panel { border:1px solid #eee; border-radius:6px; overflow:hidden; background:white; }
+.admin-panel + .admin-panel { margin-top:16px; }
+.admin-panel-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px; border-bottom:1px solid #eee; background:#fffdfa; }
+.admin-panel-head h3 { font-family:Georgia,serif; font-size:19px; }
+.admin-panel-head small { color:#999; }
+.admin-search { display:flex; gap:8px; width:min(520px,100%); }
+.admin-search input { flex:1; padding:11px 12px; border:1px solid #ddd; border-radius:4px; outline:none; text-transform:uppercase; min-width:0; }
+.admin-search input:focus { border-color:var(--dourado); box-shadow:0 0 0 3px rgba(201,161,90,.08); }
+.admin-search button { padding:10px 13px; }
+.admin-detail { padding:17px; min-height:145px; }
+.admin-valid { display:inline-flex; align-items:center; gap:6px; padding:7px 10px; border-radius:99px; background:#edf8f0; color:#276c38; font-size:10px; font-weight:800; margin-bottom:13px; }
+.admin-invalid { background:#fff0f0; color:#922; }
+.admin-detail-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:9px; margin-bottom:13px; }
+.admin-detail-box { background:#faf8f5; border:1px solid #eee; padding:11px; }
+.admin-detail-box span { display:block; color:#999; font-size:8px; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+.admin-items { border:1px solid #eee; border-radius:4px; overflow:hidden; }
+.admin-item { display:grid; grid-template-columns:1fr auto auto; gap:10px; padding:10px; border-bottom:1px solid #eee; font-size:11px; align-items:center; }
+.admin-item:last-child { border-bottom:0; }
+.admin-total { display:flex; justify-content:space-between; gap:10px; padding:14px 0; font-weight:900; font-size:17px; }
+.admin-status { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.admin-status select { padding:9px; border:1px solid #ddd; background:white; border-radius:4px; }
+.admin-table-wrap { max-height:330px; overflow:auto; }
+.admin-table { width:100%; border-collapse:collapse; min-width:620px; }
+.admin-table th,.admin-table td { text-align:left; padding:10px 12px; border-bottom:1px solid #eee; font-size:10px; }
+.admin-table th { position:sticky; top:0; z-index:1; background:#faf8f5; color:#777; text-transform:uppercase; letter-spacing:1px; font-size:8px; }
+.admin-table tbody tr.admin-clickable { cursor:pointer; }
+.admin-table tbody tr.admin-clickable:hover { background:#fffaf1; }
+.admin-code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-weight:900; }
+.admin-role { font-size:8px; text-transform:uppercase; letter-spacing:1px; font-weight:800; color:#956f31; }
+.admin-empty { color:#888; text-align:center; padding:28px; font-size:12px; }
+.admin-account-badge { display:inline-flex; background:rgba(201,161,90,.13); color:#8b6628; padding:5px 8px; border-radius:999px; font-size:9px; font-weight:900; letter-spacing:1px; text-transform:uppercase; margin-left:5px; }
+@media(max-width:1000px){ .admin-metrics{grid-template-columns:repeat(3,1fr)} .admin-grid{grid-template-columns:1fr} }
+@media(max-width:700px){ .admin-modal-content{padding:25px 15px} .admin-topline{align-items:flex-start;flex-direction:column;padding-right:35px}.admin-topline h2{font-size:28px}.admin-metrics{grid-template-columns:repeat(2,1fr)} .admin-detail-grid{grid-template-columns:1fr}.admin-search{flex-direction:column}.admin-item{grid-template-columns:1fr auto}.admin-item>strong:last-child{grid-column:1/-1}.account-modal-content{padding:34px 22px} }
+
+@media(max-width: 700px) {
+    .account-button { width: 42px; padding: 0; justify-content: center; border-radius: 50%; }
+    #accountButtonText { display: none; }
+    .auth-modal-content, .account-modal-content, .order-created-content { padding: 34px 22px; }
+    .auth-modal-content h2, .order-created-content h2 { font-size: 29px; }
+    .account-orders-title { align-items: flex-start; flex-direction: column; gap: 3px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="header">
+
+        <div class="logo">
+            Perfumaria Sutan
+            <span>Essência & Elegância</span>
+        </div>
+
+        <nav id="menu">
+
+            <a href="#inicio" onclick="fecharMenu()">Início</a>
+            <a href="#destaques" onclick="fecharMenu()">Destaques</a>
+            <a href="#loja" onclick="fecharMenu()">Loja</a>
+            <a href="#sobre" onclick="fecharMenu()">Sobre</a>
+            <a href="#contato" onclick="fecharMenu()">Contato</a>
+
+        </nav>
+
+        <div class="header-actions">
+
+            <button
+                class="menu-mobile"
+                onclick="toggleMenu()"
+                aria-label="Abrir menu"
+            >
+                ☰
+            </button>
+
+            <button
+                class="account-button"
+                id="accountButton"
+                onclick="abrirContaOuLogin()"
+                aria-label="Entrar ou abrir minha conta"
+                title="Minha conta"
+            >
+                👤 <span id="accountButtonText">Entrar</span>
+            </button>
+
+            <button
+                class="icon-btn"
+                onclick="abrirFavoritos()"
+                aria-label="Favoritos"
+                title="Favoritos"
+            >
+                ♥
+                <span class="cart-count favorite-count" id="favoriteCount">0</span>
+            </button>
+
+            <button
+                class="icon-btn"
+                onclick="abrirCarrinho()"
+                aria-label="Carrinho"
+                title="Carrinho"
+            >
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <div class="hero-small">
+            Perfumaria Sutan
+        </div>
+
+        <h1>
+            Sua essência.<br>
+            <strong>Sua identidade.</strong>
+        </h1>
+
+        <p>
+            Perfumes cuidadosamente selecionados para quem deseja
+            transformar cada momento em uma experiência inesquecível.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#loja" class="btn">
+                Explorar perfumes
+            </a>
+
+            <a href="#sobre" class="btn btn-outline">
+                Conheça a Sutan
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BENEFÍCIOS ================= -->
+
+<div class="features">
+
+    <div class="features-grid">
+
+        <div class="feature">
+            <div class="feature-icon">✨</div>
+            <div>
+                <h3>Perfumes selecionados</h3>
+                <p>Fragrâncias para todos os estilos.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🚚</div>
+            <div>
+                <h3>Entrega segura</h3>
+                <p>Seu pedido protegido até chegar.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💳</div>
+            <div>
+                <h3>Pagamento facilitado</h3>
+                <p>Negocie diretamente pelo WhatsApp.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💎</div>
+            <div>
+                <h3>Experiência premium</h3>
+                <p>Atendimento pensado para você.</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= DESTAQUES ================= -->
+
+<section class="section featured" id="destaques">
+
+    <div class="section-header">
+
+        <span>Escolha da Sutan</span>
+
+        <h2>Perfumes em destaque</h2>
+
+        <p>
+            Descubra algumas das fragrâncias que fazem mais sucesso
+            entre nossos clientes.
+        </p>
+
+    </div>
+
+    <div class="featured-grid" id="featuredProducts"></div>
+
+</section>
+
+
+<!-- ================= LOJA ================= -->
+
+<section class="section" id="loja">
+
+    <div class="section-header">
+
+        <span>Catálogo Sutan</span>
+
+        <h2>Encontre sua fragrância</h2>
+
+        <p>
+            Pesquise, filtre e escolha o perfume que combina
+            com sua personalidade.
+        </p>
+
+    </div>
+
+    <div class="shop-tools">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="🔎 Procurar perfume..."
+                oninput="filtrarProdutos()"
+            >
+
+        </div>
+
+        <select id="category" onchange="filtrarProdutos()">
+
+            <option value="todos">Todas as categorias</option>
+            <option value="Feminino">Femininos</option>
+            <option value="Masculino">Masculinos</option>
+            <option value="Unissex">Unissex</option>
+            <option value="Cremes">Cremes</option>
+            <option value="Spray corporal">Spray corporal</option>
+
+        </select>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+
+<!-- ================= BANNER ================= -->
+
+<div class="banner">
+
+    <span>Coleção especial</span>
+
+    <h2>
+        Uma boa fragrância deixa uma lembrança.
+    </h2>
+
+    <a href="#loja" class="btn">
+        Comprar agora
+    </a>
+
+</div>
+
+
+<!-- ================= SOBRE ================= -->
+
+<section class="about" id="sobre">
+
+    <div class="about-grid">
+
+        <div class="about-img"></div>
+
+        <div class="about-text">
+
+            <span>A história da Sutan</span>
+
+            <h2>Mais que um perfume.</h2>
+
+            <p>
+                A Perfumaria Sutan nasceu com uma ideia simples:
+                ajudar cada pessoa a encontrar uma fragrância
+                que realmente represente quem ela é.
+            </p>
+
+            <p>
+                Nossa seleção combina elegância, personalidade e
+                sofisticação para diferentes estilos e momentos.
+            </p>
+
+            <p>
+                Seja para presentear alguém especial ou simplesmente
+                encontrar sua nova assinatura olfativa, a Sutan está
+                aqui para tornar essa escolha especial.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AVALIAÇÕES ================= -->
+
+<section class="section reviews">
+
+    <div class="section-header">
+
+        <span>Clientes Sutan</span>
+
+        <h2>O que dizem nossos clientes</h2>
+
+        <p>
+            Uma boa experiência começa pela escolha da fragrância.
+        </p>
+
+    </div>
+
+    <div class="reviews-grid">
+
+        <div class="review">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Amei o perfume! O atendimento foi muito bom e
+                a fragrância superou minhas expectativas.”
+            </p>
+
+            <strong>— Cliente Sutan</strong>
+
+        </div>
+
+        <div class="review">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Comprei para presentear e foi uma ótima escolha.
+                O perfume é lindo e muito marcante.”
+            </p>
+
+            <strong>— Cliente Sutan</strong>
+
+        </div>
+
+        <div class="review">
+
+            <div class="review-stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Amei a experiência. Encontrei exatamente a
+                fragrância que estava procurando.”
+            </p>
+
+            <strong>— Cliente Sutan</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="section newsletter" id="contato">
+
+    <div class="section-header">
+
+        <span>Fique por dentro</span>
+
+        <h2>Receba novidades da Sutan</h2>
+
+        <p>
+            Cadastre seu e-mail para receber lançamentos,
+            promoções e novidades.
+        </p>
+
+    </div>
+
+    <form
+        class="newsletter-form"
+        onsubmit="inscrever(event)"
+    >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Seu melhor e-mail"
+            required
+        >
+
+        <button type="submit">
+            Quero receber
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                Perfumaria Sutan
+            </div>
+
+            <p>
+                Perfumes que transformam momentos
+                em memórias.
+            </p>
+
+        </div>
+
+        <div>
+
+            <div class="footer-title">
+                Navegação
+            </div>
+
+            <a href="#inicio">Início</a>
+            <a href="#destaques">Destaques</a>
+            <a href="#loja">Perfumes</a>
+            <a href="#sobre">Sobre nós</a>
+            <a href="#contato">Contato</a>
+
+        </div>
+
+        <div>
+
+            <div class="footer-title">
+                Atendimento
+            </div>
+
+            <p>Segunda a sábado</p>
+            <p>09:00 às 18:00</p>
+            <p>WhatsApp: (44) 99746-9222</p>
+
+        </div>
+
+        <div>
+
+            <div class="footer-title">
+                Redes sociais
+            </div>
+
+            <a
+                href="https://www.instagram.com/perfumaria.sutan/"
+                target="_blank"
+                rel="noopener"
+            >
+                Instagram
+            </a>
+
+            <a href="#">Facebook</a>
+            <a href="#">TikTok</a>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        <p>
+            © 2026 Perfumaria Sutan — Todos os direitos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= CARRINHO ================= -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="fecharPaineisLaterais()"
+></div>
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>Seu carrinho</h2>
+
+        <button
+            class="close-cart"
+            onclick="fecharCarrinho()"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div class="cart-items" id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <span id="cartTotal">
+                R$ 0,00
+            </span>
+
+        </div>
+
+        <button
+            class="checkout"
+            onclick="finalizarPedidoWhatsAppSeguro()"
+        >
+            📲 Finalizar pedido no WhatsApp
+        </button>
+
+        <p class="secure-order-note">
+            O site cria um ID oficial antes de abrir o WhatsApp. O valor pode ser conferido pelo admin no painel.
+        </p>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ================= FAVORITOS ================= -->
+
+<aside class="cart favorites-panel" id="favoritesPanel">
+
+    <div class="cart-header">
+        <h2>Seus favoritos</h2>
+        <button
+            class="close-cart"
+            onclick="fecharFavoritos()"
+            aria-label="Fechar favoritos"
+        >
+            ×
+        </button>
+    </div>
+
+    <div class="cart-items" id="favoriteItems"></div>
+
+</aside>
+
+
+<!-- ================= MODAL PRODUTO ================= -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="fecharModal()"
+        >
+            ×
+        </button>
+
+        <div class="modal-product">
+
+            <img id="modalImage" src="" alt="">
+
+            <div class="modal-info">
+
+                <span id="modalCategory"></span>
+
+                <h2 id="modalName"></h2>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <p id="modalDescription"></p>
+
+                <div
+                    class="modal-price"
+                    id="modalPrice"
+                ></div>
+
+                <button
+                    class="btn"
+                    id="modalAdd"
+                >
+                    Adicionar ao carrinho
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= LOGIN / CADASTRO ================= -->
+
+<div class="modal" id="authModal">
+    <div class="modal-content auth-modal-content">
+        <button class="modal-close" onclick="fecharAuthModal()" aria-label="Fechar">×</button>
+
+        <div class="auth-brand">Perfumaria Sutan</div>
+        <h2 id="authTitle">Entre na sua conta</h2>
+        <p class="auth-subtitle" id="authSubtitle">Use sua conta para criar pedidos oficiais e acompanhar seus IDs.</p>
+
+        <div class="auth-tabs">
+            <button id="loginTab" class="auth-tab active" onclick="mostrarAbaAuth('login')">Entrar</button>
+            <button id="signupTab" class="auth-tab" onclick="mostrarAbaAuth('signup')">Criar conta</button>
+        </div>
+
+        <div class="auth-message" id="authMessage"></div>
+
+        <form id="loginForm" class="auth-form" onsubmit="entrar(event)">
+            <label>E-mail
+                <input type="email" id="loginEmail" autocomplete="email" required placeholder="voce@email.com">
+            </label>
+            <label>Senha
+                <input type="password" id="loginPassword" autocomplete="current-password" required minlength="6" placeholder="Sua senha">
+            </label>
+            <button type="submit" class="btn auth-submit" id="loginSubmit">Entrar</button>
+        </form>
+
+        <form id="signupForm" class="auth-form hidden" onsubmit="criarConta(event)">
+            <label>Nome
+                <input type="text" id="signupName" autocomplete="name" required maxlength="80" placeholder="Seu nome">
+            </label>
+            <label>E-mail
+                <input type="email" id="signupEmail" autocomplete="email" required placeholder="voce@email.com">
+            </label>
+            <label>Senha
+                <input type="password" id="signupPassword" autocomplete="new-password" required minlength="8" placeholder="Mínimo de 8 caracteres">
+            </label>
+            <button type="submit" class="btn auth-submit" id="signupSubmit">Criar minha conta</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- ================= MINHA CONTA ================= -->
+
+<div class="modal" id="accountModal">
+    <div class="modal-content account-modal-content">
+        <button class="modal-close" onclick="fecharAccountModal()" aria-label="Fechar">×</button>
+
+        <div class="account-head">
+            <div class="account-avatar">👤</div>
+            <div>
+                <span>Minha conta</span>
+                <h2 id="accountName">Cliente Sutan</h2>
+                <p id="accountEmail"></p><span class="admin-account-badge hidden" id="accountAdminBadge">Administrador</span>
+            </div>
+        </div>
+
+        <div class="account-actions">
+            <button class="btn" onclick="carregarMeusPedidos()">Atualizar meus pedidos</button>
+            <button class="btn btn-outline admin-link hidden" id="adminPanelLink" type="button" onclick="abrirAdminPanel()">Painel administrativo</button>
+            <button class="account-logout" onclick="sair()">Sair da conta</button>
+        </div>
+
+        <div class="account-orders">
+            <div class="account-orders-title">
+                <h3>Meus pedidos</h3>
+                <span>IDs oficiais gerados pelo site</span>
+            </div>
+            <div id="myOrdersList" class="my-orders-list">
+                <p class="muted-center">Carregando...</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- ================= PAINEL ADMINISTRATIVO — MESMO SITE ================= -->
+<div class="modal" id="adminModal">
+    <div class="modal-content admin-modal-content">
+        <button class="modal-close" onclick="fecharAdminPanel()" aria-label="Fechar">×</button>
+
+        <div class="admin-topline">
+            <div>
+                <span>Administração Sutan</span>
+                <h2>Painel administrativo</h2>
+                <p>Pedidos, contas e acessos são consultados diretamente no banco. O valor mostrado aqui é o valor oficial do pedido.</p>
+            </div>
+            <button class="admin-refresh" type="button" onclick="carregarAdminDashboard()">↻ Atualizar painel</button>
+        </div>
+
+        <div class="admin-metrics">
+            <div class="admin-metric"><span>Visitantes únicos</span><strong id="admUnique">0</strong></div>
+            <div class="admin-metric"><span>Total de acessos</span><strong id="admVisits">0</strong></div>
+            <div class="admin-metric"><span>Visitantes hoje</span><strong id="admToday">0</strong></div>
+            <div class="admin-metric"><span>Contas</span><strong id="admUsers">0</strong></div>
+            <div class="admin-metric"><span>Pedidos</span><strong id="admOrders">0</strong></div>
+            <div class="admin-metric"><span>Valor dos pedidos</span><strong id="admValue">R$ 0,00</strong></div>
+        </div>
+
+        <div class="admin-grid">
+            <div>
+                <section class="admin-panel">
+                    <div class="admin-panel-head">
+                        <div><h3>Verificar ID de pedido</h3><small>Confirme se o ID e o valor enviados no WhatsApp são verdadeiros.</small></div>
+                    </div>
+                    <form class="admin-search" style="padding:15px" onsubmit="buscarAdminPedido(event)">
+                        <input id="adminOrderSearch" type="text" placeholder="SUT-20260812-..." autocomplete="off">
+                        <button class="btn" type="submit">Verificar</button>
+                    </form>
+                    <div id="adminOrderDetail" class="admin-detail"><div class="admin-empty">Digite um ID para consultar o pedido oficial.</div></div>
+                </section>
+
+                <section class="admin-panel">
+                    <div class="admin-panel-head"><div><h3>Pedidos recentes</h3><small>Clique em um pedido para verificar.</small></div><span id="admNewOrders" class="admin-role">0 novos</span></div>
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
+                            <thead><tr><th>ID</th><th>Cliente</th><th>Status</th><th>Total</th><th>Data</th></tr></thead>
+                            <tbody id="adminOrdersBody"><tr><td colspan="5">Carregando...</td></tr></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <section class="admin-panel">
+                <div class="admin-panel-head"><div><h3>Contas cadastradas</h3><small>Últimas 100 contas do banco.</small></div></div>
+                <div class="admin-table-wrap" style="max-height:560px">
+                    <table class="admin-table" style="min-width:520px">
+                        <thead><tr><th>Nome</th><th>E-mail</th><th>Tipo</th><th>Criada em</th></tr></thead>
+                        <tbody id="adminUsersBody"><tr><td colspan="4">Carregando...</td></tr></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================= PEDIDO CRIADO ================= -->
+
+<div class="modal" id="orderCreatedModal">
+    <div class="modal-content order-created-content">
+        <button class="modal-close" onclick="fecharPedidoCriado()" aria-label="Fechar">×</button>
+        <div class="order-success-icon">✓</div>
+        <span class="order-eyebrow">Pedido registrado</span>
+        <h2>Seu ID oficial foi criado</h2>
+        <div class="order-code" id="createdOrderCode">SUT-...</div>
+        <p class="order-created-text">
+            Este ID e o valor ficaram gravados no servidor. O admin deve conferir o ID no painel antes de confirmar o pedido.
+        </p>
+        <div class="order-created-total">
+            <span>Total oficial</span>
+            <strong id="createdOrderTotal">R$ 0,00</strong>
+        </div>
+        <div class="order-created-actions">
+            <button class="btn" onclick="abrirWhatsAppUltimoPedido()">📲 Abrir WhatsApp</button>
+            <button class="btn btn-outline" onclick="copiarIdUltimoPedido()">Copiar ID</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+/* ==========================================================
+   CONFIGURAÇÕES
+========================================================== */
+
+const WHATSAPP = "5544997469222";
+
+
+/* ==========================================================
+   PRODUTOS
+========================================================== */
+
+const produtos = [
+
+    {
+        id: 1,
+        nome: "Eclaire",
+        categoria: "Feminino",
+        preco: 250.00,
+        descricao: "Uma fragrância elegante com notas florais, baunilha e um toque sofisticado.",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKVugKzXlGEGyg1oj9W8g0z4Gs3h7y0Zatd-WcQdlonA&s=10",
+        destaque: true
+    },
+
+    {
+        id: 2,
+        nome: "Yara",
+        categoria: "Feminino",
+        preco: 200.00,
+        descricao: "Intenso e marcante, perfeito para quem deseja transmitir presença e personalidade.",
+        imagem: "https://hortenciarosa.com/wp-content/uploads/2025/08/yara-lattafa-perfume-arabe.webp",
+        destaque: true
+    },
+
+    {
+        id: 3,
+        nome: "Atheeri",
+        categoria: "Feminino",
+        preco: 480.00,
+        descricao: "Delicado e envolvente, com uma combinação irresistível de flores e frutas.",
+        imagem: "https://perfumesarabes.com.br/wp-content/uploads/2025/09/Perfume-Arabe-Lattafa-Atheeri-Eau-de-Parfum.webp",
+        destaque: false
+    },
+
+    {
+        id: 4,
+        nome: "Sabah Tradicional",
+        categoria: "Feminino",
+        preco: 180.00,
+        descricao: "Uma essência moderna, poderosa e sofisticada para ocasiões especiais.",
+        imagem: "https://static.zattini.com.br/produtos/perfume-arabe-sabah-al-ward-edp-100ml-feminino/34/DA8-0054-034/DA8-0054-034_zoom1.jpg?ts=1782206129&ims=544x",
+        destaque: true
+    },
+
+    {
+        id: 5,
+        nome: "Asad",
+        categoria: "Masculino",
+        preco: 200.00,
+        descricao: "Uma fragrância aveludada e elegante para quem gosta de sofisticação.",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO97zkqtPzg45DfhmJKMyPc4ZCHw5gARwharBsidsOjw&s=10",
+        destaque: false
+    },
+
+    {
+        id: 6,
+        nome: "Attar Al Wesal",
+        categoria: "Masculino",
+        preco: 200.00,
+        descricao: "Notas profundas e sofisticadas que combinam com ocasiões marcantes.",
+        imagem: "https://static.zattini.com.br/produtos/perfume-arabe-attar-al-wesal-edp-100ml-masculino/26/DA8-0057-026/DA8-0057-026_zoom1.jpg?ts=1782206129&ims=544x",
+        destaque: false
+    },
+
+    {
+        id: 7,
+        nome: "Fakhar Gold",
+        categoria: "Masculino",
+        preco: 200.00,
+        descricao: "Leve, floral e refrescante para acompanhar seus dias.",
+        imagem: "https://http2.mlstatic.com/D_Q_NP_2X_626527-MLB109154041301_032026-T--perfume-arabe--lattafa-fakhar-gold-edp-100ml.webp",
+        destaque: false
+    },
+
+   
+     {
+        id: 8,
+        nome: "Oud For Glory",
+        categoria: "Masculino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0s593TK3DI4g2T0nfPu1qRHB3KmlFt8zL8aMbMGKu1wRjDAKtYfMkWYJf&s=10",
+        destaque: false
+    },
+
+     {
+        id: 9,
+        nome: "Fakhar rose",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://dcdn-us.mitiendanube.com/stores/006/071/027/products/lattafarose1-2d7dc253e4993045fd17452670067305-480-0.webp",
+        destaque: false
+    },
+
+ {
+        id: 10,
+        nome: "Shagaf Al Ward",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem:"https://images.tcdn.com.br/img/img_prod/1144493/perfume_shagaf_al_ward_al_wataniah_eau_de_parfum_100ml_feminino_5955_1_bd93d857577c2f8cbc03e84732cbb1c7.jpg",
+        destaque: false
+    },
+
+ {
+        id: 11,
+        nome: "Musamam",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://postureo.shop/files/product_images/2026/04/08/perfume-musamam-10802-msize.webp",
+        destaque: false
+    },
+
+{
+        id: 12,
+        nome: "Marcone rose",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://cdn-shopkit.com/usercontent/arabiaperfumes/media/images/square/f8539fc-123602-lattafa_parfum_afeef_eau_de_parfum_100ml.jpeg",
+        destaque: false
+    },
+
+    {
+        id: 13,
+        nome: "Kenz Al Malik",
+        categoria: "Masculino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://static.zattini.com.br/produtos/perfume-arabe-kenz-al-malik-edp-100ml-masculino/08/DA8-0056-008/DA8-0056-008_zoom1.jpg?ts=1782206129",
+        destaque: false
+    },
+
+    {
+        id: 14,
+        nome: "Khamrah",
+        categoria: "Masculino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://www.drogasil.com.br/_next/image?url=https%3A%2F%2Fproduct-data.raiadrogasil.io%2Fimages%2F11139898.webp&w=3840&q=40",
+        destaque: false
+    },
+
+    {
+        id: 15,
+        nome: "Wazeer",
+        categoria: "Masculino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://down-br.img.susercontent.com/file/br-11134207-7r98o-mbwjcclohvafa7",
+        destaque: false
+    },
+
+    {
+        id: 16,
+        nome: "Liquid Brun",
+        categoria: "Masculino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://cdn.awsli.com.br/600x700/278/278816/produto/367697879/liquid-5tve1ftt3e.jpeg",
+        destaque: false
+    },
+
+    {
+        id: 17,
+        nome: "Sabah sugar",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlZGGCil6wS9LrA8kPsIcApPbDricCduyKVNkvDLEVgBjCiffAjT8FeDM&s=10",
+        destaque: false
+    },
+
+    {
+        id: 18,
+        nome: "Club de Nuit Woman",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://acdn-us.mitiendanube.com/stores/001/066/168/products/perfume_club_de_nuit_woman_armaf_02-0afae5f05eff4132d317310900919416-480-0.webp",
+        destaque: false
+    },
+
+    {
+        id: 19,
+        nome: "Mayar",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://images.tcdn.com.br/img/img_prod/611043/perfume_lattafa_mayar_eau_de_parfum_feminino_100ml_lattafa_9584_1_7536e75f9334414c5890b3241a68b188.jpg",
+        destaque: false
+    },
+
+    {
+        id: 20,
+        nome: "Al Wataniah Durrat Al Aroos Eau de Parfum",
+        categoria: "Feminino",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNxwcXpqUZ4s2-78khpUvOcRpXdmmTDKDvG5g4ueGuN85-kXbh0z3BxBaG&s=10",
+        destaque: false
+    },
+
+       {
+        id: 21,
+        nome: "creme yara",
+        categoria: "Cremes",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://acdn-us.mitiendanube.com/stores/004/144/685/products/63c6fc4757168d2b67fdc54a6c94a416-d1ffafab0cacc9602517458470621773-1024-1024.webp",
+        destaque: false
+    },
+
+       {
+        id: 22,
+        nome: "creme asad",
+        categoria: "Cremes",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://http2.mlstatic.com/D_NQ_NP_771456-MLB89071951518_082025-O.webp",
+        destaque: false
+    },
+
+       {
+        id: 23,
+        nome: "Sabah Al ward",
+        categoria: "Cremes",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://epocacosmeticos.vteximg.com.br/arquivos/ids/2834286-800-800/17843198882072.jpg?v=639211172155870000",
+        destaque: false
+    },
+
+       {
+        id: 24,
+        nome: "creme angel",
+        categoria: "Cremes",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://m.media-amazon.com/images/I/619c9wqUBQL._AC_UF350,350_QL50_.jpg",
+        destaque: false
+    },
+
+      {
+        id: 25,
+        nome: "yara spray",
+        categoria: "Spray corporal",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://m.magazineluiza.com.br/a-static/420x420/spray-corporal-arabe-yara-lattafa-200ml/liviabarroscosmeticos/63dc4d1c453d11f083c642010a480899/bf1a619b66e1c5604eeed1a44ebcf6c9.jpeg",
+        destaque: false
+      },
+
+         {
+        
+        id: 26,
+        nome: "Maahir Spray",
+        categoria: "Spray corporal",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://acdn-us.mitiendanube.com/stores/001/031/418/products/spray-maahir-fd3db882629b01902917325688204091-480-0.webp",
+        destaque: false
+    
+    },
+
+      {
+        id: 27,
+        nome: "Bade'e Al Oud Amethyst Spray",
+        categoria: "Spray corporal",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://acdn-us.mitiendanube.com/stores/003/635/238/products/site-foto-produto-redimensionar-9fdd927ba5ff4284e117756180147673-480-0.webp",
+        destaque: false
+    },
+
+      {
+        id: 28,
+        nome: "Sublime Spray",
+        categoria: "Spray corporal",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://acdn-us.mitiendanube.com/stores/003/792/303/products/design-sem-nome-49-9e6fa264e8398b8f0017198509062888-640-0-f856b497b638478a9b17392066813711-1024-1024.webp",
+        destaque: false
+    },
+
+      {
+        id: 29,
+        nome: "Nebras",
+        categoria: "Unissex",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://cdn.sistemawbuy.com.br/arquivos/a48e76d3b4ff8b6e919e194fd7dfcfed/produtos/673775a8ece7f/nebras-673775a9d8ee9.jpg",
+        destaque: false
+    },
+
+    {
+        id: 30,
+        nome: "Nebras",
+        categoria: "Unissex",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://cdn.sistemawbuy.com.br/arquivos/a48e76d3b4ff8b6e919e194fd7dfcfed/produtos/673775a8ece7f/nebras-673775a9d8ee9.jpg",
+        destaque: false
+    },
+
+    {
+        id: 31,
+        nome: "Nebras",
+        categoria: "Unissex",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://cdn.sistemawbuy.com.br/arquivos/a48e76d3b4ff8b6e919e194fd7dfcfed/produtos/673775a8ece7f/nebras-673775a9d8ee9.jpg",
+        destaque: false
+    },
+
+    {
+        id: 32,
+        nome: "Nebras",
+        categoria: "Unissex",
+        preco: 198.00,
+        descricao: "Uma combinação equilibrada e contemporânea para qualquer ocasião.",
+        imagem: "https://cdn.sistemawbuy.com.br/arquivos/a48e76d3b4ff8b6e919e194fd7dfcfed/produtos/673775a8ece7f/nebras-673775a9d8ee9.jpg",
+        destaque: false
+    },
+
+];
+
+
+/* ==========================================================
+   ESTADO LOCAL SEGURO
+========================================================== */
+
+function carregarListaLocal(chave) {
+
+    try {
+
+        const valor = JSON.parse(localStorage.getItem(chave));
+
+        return Array.isArray(valor) ? valor : [];
+
+    } catch (erro) {
+
+        console.warn(`Dados locais inválidos em ${chave}. Eles foram resetados.`, erro);
+        localStorage.removeItem(chave);
+        return [];
+
+    }
+
+}
+
+let carrinho = carregarListaLocal("sutanCarrinho")
+    .map(item => {
+
+        const produto = produtos.find(p => p.id === Number(item.id));
+
+        if (!produto) return null;
+
+        const quantidade = Math.max(
+            1,
+            Math.min(99, Math.floor(Number(item.quantidade) || 1))
+        );
+
+        return {
+            ...produto,
+            quantidade
+        };
+
+    })
+    .filter(Boolean);
+
+let favoritos = [
+    ...new Set(
+        carregarListaLocal("sutanFavoritos")
+            .map(Number)
+            .filter(id => produtos.some(produto => produto.id === id))
+    )
+];
+
+
+/* ==========================================================
+   PREÇO
+========================================================== */
+
+function moeda(valor) {
+
+    return valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+
+}
+
+
+/* ==========================================================
+   TOAST
+========================================================== */
+
+function mostrarToast(mensagem) {
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent = mensagem;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 2500);
+
+}
+
+
+/* ==========================================================
+   MOSTRAR DESTAQUES
+========================================================== */
+
+function mostrarDestaques() {
+
+    const container =
+        document.getElementById("featuredProducts");
+
+    container.innerHTML = "";
+
+    const destaques =
+        produtos.filter(produto => produto.destaque);
+
+    destaques.slice(0, 3).forEach(produto => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "featured-card";
+
+        card.onclick = () =>
+            abrirProduto(produto.id);
+
+        card.innerHTML = `
+
+            <img
+                src="${produto.imagem}"
+                alt="${produto.nome}"
+            >
+
+            <div class="featured-overlay">
+
+                <span>${produto.categoria}</span>
+
+                <h3>${produto.nome}</h3>
+
+                <p>
+                    ${moeda(produto.preco)}
+                </p>
+
+            </div>
+        `;
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* ==========================================================
+   MOSTRAR PRODUTOS
+========================================================== */
+
+function mostrarProdutos(lista = produtos) {
+
+    const container =
+        document.getElementById("products");
+
+    container.innerHTML = "";
+
+    if (lista.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="no-products">
+
+                <h3>
+                    Nenhum perfume encontrado.
+                </h3>
+
+                <p>
+                    Tente outra busca ou categoria.
+                </p>
+
+            </div>
+        `;
+
+        return;
+    }
+
+
+    lista.forEach(produto => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "product";
+
+
+        const estaFavoritado =
+            favoritos.includes(produto.id);
+
+
+        card.innerHTML = `
+
+            <div
+                class="product-img"
+                onclick="abrirProduto(${produto.id})"
+                style="cursor:pointer"
+            >
+
+                ${
+                    produto.destaque
+                    ? `<div class="badge">Destaque</div>`
+                    : ""
+                }
+
+                <button
+                    class="favorite ${estaFavoritado ? "active" : ""}"
+                    onclick="favoritar(event, ${produto.id})"
+                    aria-label="Favoritar"
+                >
+                    ${estaFavoritado ? "♥" : "♡"}
+                </button>
+
+                <img
+                    src="${produto.imagem}"
+                    alt="${produto.nome}"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="category">
+                    ${produto.categoria}
+                </div>
+
+                <h3>
+                    ${produto.nome}
+                </h3>
+
+                <p class="product-description">
+                    ${produto.descricao}
+                </p>
+
+                <div class="rating">
+                    ★★★★★
+                </div>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        ${moeda(produto.preco)}
+                    </div>
+
+                    <button
+                        class="add"
+                        onclick="adicionarCarrinho(${produto.id})"
+                    >
+                        + Carrinho
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* ==========================================================
+   FILTRO
+========================================================== */
+
+function filtrarProdutos() {
+
+    const busca =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const categoria =
+        document
+        .getElementById("category")
+        .value;
+
+
+    const resultado =
+        produtos.filter(produto => {
+
+            const correspondeBusca =
+                produto.nome
+                .toLowerCase()
+                .includes(busca) ||
+
+                produto.descricao
+                .toLowerCase()
+                .includes(busca);
+
+
+            const correspondeCategoria =
+                categoria === "todos" ||
+                produto.categoria.toLowerCase() === categoria.toLowerCase();
+
+                return correspondeBusca && correspondeCategoria;
+
+        });
+
+
+    mostrarProdutos(resultado);
+
+}
+
+
+/* ==========================================================
+   FAVORITOS
+========================================================== */
+
+function salvarFavoritos() {
+
+    localStorage.setItem(
+        "sutanFavoritos",
+        JSON.stringify(favoritos)
+    );
+
+}
+
+function favoritar(event, id) {
+
+    if (event) event.stopPropagation();
+
+    if (!produtos.some(produto => produto.id === id)) return;
+
+    if (favoritos.includes(id)) {
+
+        favoritos = favoritos.filter(favorito => favorito !== id);
+        mostrarToast("Removido dos favoritos.");
+
+    } else {
+
+        favoritos.push(id);
+        mostrarToast("Adicionado aos favoritos ❤️");
+
+    }
+
+    salvarFavoritos();
+    atualizarFavoritos();
+    filtrarProdutos();
+
+}
+
+function atualizarFavoritos() {
+
+    const container = document.getElementById("favoriteItems");
+    const count = document.getElementById("favoriteCount");
+
+    const lista = favoritos
+        .map(id => produtos.find(produto => produto.id === id))
+        .filter(Boolean);
+
+    count.textContent = lista.length;
+    container.innerHTML = "";
+
+    if (lista.length === 0) {
+
+        container.innerHTML = `
+            <div class="empty-cart">
+                <div style="font-size:45px;margin-bottom:15px;">♡</div>
+                <h3>Nenhum favorito ainda</h3>
+                <p style="margin-top:8px;">Clique no coração de um produto para salvá-lo.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    lista.forEach(produto => {
+
+        const div = document.createElement("div");
+        div.className = "favorite-item";
+
+        div.innerHTML = `
+            <img src="${produto.imagem}" alt="${produto.nome}">
+            <div>
+                <h4>${produto.nome}</h4>
+                <p>${moeda(produto.preco)}</p>
+                <div class="favorite-actions">
+                    <button
+                        class="favorite-add"
+                        onclick="adicionarCarrinho(${produto.id}); fecharFavoritos();"
+                    >
+                        + Carrinho
+                    </button>
+                    <button
+                        class="favorite-remove"
+                        onclick="favoritar(null, ${produto.id})"
+                    >
+                        Remover
+                    </button>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+
+/* ==========================================================
+   ADICIONAR AO CARRINHO
+========================================================== */
+
+function adicionarCarrinho(id) {
+
+    const produto =
+        produtos.find(p => p.id === id);
+
+    if (!produto) {
+        mostrarToast("Produto não encontrado.");
+        return;
+    }
+
+    const existente =
+        carrinho.find(item => item.id === id);
+
+
+    if (existente) {
+
+        existente.quantidade++;
+
+    } else {
+
+        carrinho.push({
+            ...produto,
+            quantidade: 1
+        });
+
+    }
+
+
+    salvarCarrinho();
+
+    atualizarCarrinho();
+
+    mostrarToast(
+        `${produto.nome} foi adicionado ao carrinho!`
+    );
+
+    abrirCarrinho();
+
+}
+
+
+/* ==========================================================
+   SALVAR CARRINHO
+========================================================== */
+
+function salvarCarrinho() {
+
+    localStorage.setItem(
+        "sutanCarrinho",
+        JSON.stringify(carrinho)
+    );
+
+}
+
+
+/* ==========================================================
+   ALTERAR QUANTIDADE
+========================================================== */
+
+function alterarQuantidade(id, quantidade) {
+
+    const item =
+        carrinho.find(
+            produto => produto.id === id
+        );
+
+
+    if (!item) return;
+
+
+    item.quantidade += quantidade;
+
+
+    if (item.quantidade <= 0) {
+
+        carrinho =
+            carrinho.filter(
+                produto => produto.id !== id
+            );
+
+    }
+
+
+    salvarCarrinho();
+
+    atualizarCarrinho();
+
+}
+
+
+/* ==========================================================
+   REMOVER
+========================================================== */
+
+function removerProduto(id) {
+
+    const produto =
+        carrinho.find(item => item.id === id);
+
+    carrinho =
+        carrinho.filter(
+            item => item.id !== id
+        );
+
+    salvarCarrinho();
+
+    atualizarCarrinho();
+
+    if (produto) {
+
+        mostrarToast(
+            `${produto.nome} removido do carrinho.`
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   ATUALIZAR CARRINHO
+========================================================== */
+
+function atualizarCarrinho() {
+
+    const container =
+        document.getElementById("cartItems");
+
+    const count =
+        document.getElementById("cartCount");
+
+    const total =
+        document.getElementById("cartTotal");
+
+
+    const quantidadeTotal =
+        carrinho.reduce(
+            (soma, item) =>
+                soma + item.quantidade,
+            0
+        );
+
+
+    count.textContent =
+        quantidadeTotal;
+
+
+    if (carrinho.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="empty-cart">
+
+                <div
+                    style="
+                    font-size:45px;
+                    margin-bottom:15px;
+                    "
+                >
+                    🛍️
+                </div>
+
+                <h3>
+                    Seu carrinho está vazio
+                </h3>
+
+                <p style="margin-top:8px;">
+                    Adicione seus perfumes favoritos.
+                </p>
+
+            </div>
+        `;
+
+        total.textContent =
+            moeda(0);
+
+        return;
+    }
+
+
+    container.innerHTML = "";
+
+
+    let valorTotal = 0;
+
+
+    carrinho.forEach(item => {
+
+        valorTotal +=
+            item.preco * item.quantidade;
+
+
+        const div =
+            document.createElement("div");
+
+        div.className =
+            "cart-item";
+
+
+        div.innerHTML = `
+
+            <img
+                src="${item.imagem}"
+                alt="${item.nome}"
+            >
+
+            <div class="cart-item-info">
+
+                <h4>
+                    ${item.nome}
+                </h4>
+
+                <p>
+                    ${moeda(item.preco)}
+                </p>
+
+                <div class="quantity">
+
+                    <button
+                        onclick="alterarQuantidade(
+                            ${item.id},
+                            -1
+                        )"
+                    >
+                        −
+                    </button>
+
+                    <strong>
+                        ${item.quantidade}
+                    </strong>
+
+                    <button
+                        onclick="alterarQuantidade(
+                            ${item.id},
+                            1
+                        )"
+                    >
+                        +
+                    </button>
+
+                    <button
+                        class="remove"
+                        onclick="removerProduto(
+                            ${item.id}
+                        )"
+                    >
+                        Remover
+                    </button>
+
+                </div>
+
+            </div>
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+
+    total.textContent =
+        moeda(valorTotal);
+
+}
+
+
+/* ==========================================================
+   PAINÉIS LATERAIS
+========================================================== */
+
+function fecharPaineisLaterais() {
+
+    document.getElementById("cart").classList.remove("active");
+    document.getElementById("favoritesPanel").classList.remove("active");
+    document.getElementById("overlay").classList.remove("active");
+
+}
+
+function abrirCarrinho() {
+
+    fecharPaineisLaterais();
+    atualizarCarrinho();
+    document.getElementById("cart").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+
+}
+
+function fecharCarrinho() {
+
+    document.getElementById("cart").classList.remove("active");
+
+    if (!document.getElementById("favoritesPanel").classList.contains("active")) {
+        document.getElementById("overlay").classList.remove("active");
+    }
+
+}
+
+function abrirFavoritos() {
+
+    fecharPaineisLaterais();
+    atualizarFavoritos();
+    document.getElementById("favoritesPanel").classList.add("active");
+    document.getElementById("overlay").classList.add("active");
+
+}
+
+function fecharFavoritos() {
+
+    document.getElementById("favoritesPanel").classList.remove("active");
+
+    if (!document.getElementById("cart").classList.contains("active")) {
+        document.getElementById("overlay").classList.remove("active");
+    }
+
+}
+
+
+/* ==========================================================
+   MODAL
+========================================================== */
+
+function abrirProduto(id) {
+
+    const produto =
+        produtos.find(p => p.id === id);
+
+
+    if (!produto) return;
+
+
+    document
+        .getElementById("modalImage")
+        .src = produto.imagem;
+
+
+    document
+        .getElementById("modalImage")
+        .alt = produto.nome;
+
+
+    document
+        .getElementById("modalCategory")
+        .textContent = produto.categoria;
+
+
+    document
+        .getElementById("modalName")
+        .textContent = produto.nome;
+
+
+    document
+        .getElementById("modalDescription")
+        .textContent = produto.descricao;
+
+
+    document
+        .getElementById("modalPrice")
+        .textContent = moeda(produto.preco);
+
+
+    document
+        .getElementById("modalAdd")
+        .onclick = function() {
+
+            adicionarCarrinho(produto.id);
+
+            fecharModal();
+
+        };
+
+
+    document
+        .getElementById("productModal")
+        .classList.add("active");
+
+}
+
+
+function fecharModal() {
+
+    document
+        .getElementById("productModal")
+        .classList.remove("active");
+
+}
+
+
+/* ==========================================================
+   LOGIN, CONTA E PEDIDOS OFICIAIS
+========================================================== */
+
+let supabaseClient = null;
+let usuarioAtual = null;
+let sessaoAtual = null;
+let usuarioEhAdmin = false;
+let ultimoPedido = null;
+let configCarregada = null;
+let tentativaAutoAdminFeita = false;
+
+function totalCarrinho() {
+    return carrinho.reduce(
+        (total, item) => total + item.preco * item.quantidade,
+        0
+    );
+}
+
+function itensDoCarrinhoParaApi() {
+    return carrinho.map(item => ({
+        id: Number(item.id),
+        quantidade: Number(item.quantidade)
+    }));
+}
+
+async function carregarConfigSite() {
+    if (configCarregada) return configCarregada;
+
+    const resposta = await fetch("/api/config", {
+        headers: { "Accept": "application/json" }
+    });
+    const dados = await resposta.json().catch(() => ({}));
+
+    if (!resposta.ok || !dados.supabaseUrl || !dados.publishableKey) {
+        throw new Error(
+            dados.error ||
+            "O login ainda não foi configurado no servidor."
+        );
+    }
+
+    configCarregada = dados;
+    return dados;
+}
+
+async function inicializarLogin() {
+    try {
+        const config = await carregarConfigSite();
+
+        if (!window.supabase || !window.supabase.createClient) {
+            throw new Error("A biblioteca de login não foi carregada.");
+        }
+
+        supabaseClient = window.supabase.createClient(
+            config.supabaseUrl,
+            config.publishableKey,
+            {
+                auth: {
+                    persistSession: true,
+                    autoRefreshToken: true,
+                    detectSessionInUrl: true
+                }
+            }
+        );
+
+        const { data } = await supabaseClient.auth.getSession();
+        sessaoAtual = data.session || null;
+        usuarioAtual = sessaoAtual?.user || null;
+        await atualizarEstadoConta();
+
+        const params = new URLSearchParams(location.search);
+        if (!tentativaAutoAdminFeita && params.get("admin") === "1") {
+            tentativaAutoAdminFeita = true;
+            if (usuarioAtual && usuarioEhAdmin) {
+                setTimeout(() => abrirAdminPanel(), 0);
+            } else if (!usuarioAtual) {
+                abrirAuthModal("login");
+                const adminEmail = config.adminEmail || "admin@sutan.internal";
+                const campo = document.getElementById("loginEmail");
+                if (campo) campo.value = adminEmail;
+                mensagemAuth("Entre com a conta administrativa para verificar este pedido.", "info");
+            }
+        }
+
+        supabaseClient.auth.onAuthStateChange((event, session) => {
+            sessaoAtual = session || null;
+            usuarioAtual = session?.user || null;
+            setTimeout(() => atualizarEstadoConta(), 0);
+        });
+
+    } catch (erro) {
+        console.warn("Login indisponível:", erro.message);
+    }
+}
+
+async function obterToken() {
+    if (!supabaseClient) return null;
+    const { data, error } = await supabaseClient.auth.getSession();
+    if (error || !data.session) return null;
+    sessaoAtual = data.session;
+    usuarioAtual = data.session.user;
+    return data.session.access_token;
+}
+
+async function apiAutenticada(url, options = {}) {
+    const token = await obterToken();
+    if (!token) throw new Error("Faça login para continuar.");
+
+    const headers = new Headers(options.headers || {});
+    headers.set("Authorization", `Bearer ${token}`);
+    headers.set("Accept", "application/json");
+
+    return fetch(url, { ...options, headers });
+}
+
+async function atualizarEstadoConta() {
+    const botao = document.getElementById("accountButton");
+    const texto = document.getElementById("accountButtonText");
+
+    if (!usuarioAtual) {
+        usuarioEhAdmin = false;
+        botao?.classList.remove("logged");
+        if (texto) texto.textContent = "Entrar";
+        document.getElementById("adminPanelLink")?.classList.add("hidden");
+        document.getElementById("accountAdminBadge")?.classList.add("hidden");
+        return;
+    }
+
+    botao?.classList.add("logged");
+    if (texto) texto.textContent = "Conta";
+
+    try {
+        const resposta = await apiAutenticada("/api/me");
+        const dados = await resposta.json().catch(() => ({}));
+        usuarioEhAdmin = Boolean(resposta.ok && dados.isAdmin);
+        document.getElementById("adminPanelLink")?.classList.toggle("hidden", !usuarioEhAdmin);
+        document.getElementById("accountAdminBadge")?.classList.toggle("hidden", !usuarioEhAdmin);
+    } catch (_) {
+        usuarioEhAdmin = false;
+    }
+}
+
+function abrirContaOuLogin() {
+    if (usuarioAtual) {
+        abrirMinhaConta();
+    } else {
+        abrirAuthModal("login");
+    }
+}
+
+function abrirAuthModal(aba = "login") {
+    fecharPaineisLaterais();
+    mostrarAbaAuth(aba);
+    limparMensagemAuth();
+    document.getElementById("authModal").classList.add("active");
+}
+
+function fecharAuthModal() {
+    document.getElementById("authModal").classList.remove("active");
+}
+
+function mostrarAbaAuth(aba) {
+    const login = aba === "login";
+    document.getElementById("loginForm").classList.toggle("hidden", !login);
+    document.getElementById("signupForm").classList.toggle("hidden", login);
+    document.getElementById("loginTab").classList.toggle("active", login);
+    document.getElementById("signupTab").classList.toggle("active", !login);
+    document.getElementById("authTitle").textContent = login ? "Entre na sua conta" : "Crie sua conta";
+    document.getElementById("authSubtitle").textContent = login
+        ? "Use sua conta para criar pedidos oficiais e acompanhar seus IDs."
+        : "Seu pedido ficará ligado à sua conta e poderá ser consultado depois.";
+    limparMensagemAuth();
+}
+
+function mensagemAuth(mensagem, tipo = "info") {
+    const el = document.getElementById("authMessage");
+    el.textContent = mensagem;
+    el.className = `auth-message show ${tipo}`;
+}
+
+function limparMensagemAuth() {
+    const el = document.getElementById("authMessage");
+    if (!el) return;
+    el.textContent = "";
+    el.className = "auth-message";
+}
+
+async function aplicarSessaoRecebida(dados) {
+    if (!supabaseClient) await inicializarLogin();
+    if (!supabaseClient) throw new Error("O login ainda não está configurado.");
+    if (!dados?.accessToken || !dados?.refreshToken) throw new Error("O servidor não retornou uma sessão válida.");
+
+    const { data, error } = await supabaseClient.auth.setSession({
+        access_token: dados.accessToken,
+        refresh_token: dados.refreshToken
+    });
+    if (error || !data?.session) throw error || new Error("Não foi possível iniciar a sessão.");
+
+    sessaoAtual = data.session;
+    usuarioAtual = data.user;
+    await atualizarEstadoConta();
+    return data.user;
+}
+
+async function entrar(event) {
+    event.preventDefault();
+    const botao = document.getElementById("loginSubmit");
+
+    try {
+        botao.disabled = true;
+        botao.textContent = "Entrando...";
+        limparMensagemAuth();
+
+        const email = document.getElementById("loginEmail").value.trim();
+        const password = document.getElementById("loginPassword").value;
+
+        const resposta = await fetch("/api/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({ email, password })
+        });
+        const dados = await resposta.json().catch(() => ({}));
+        if (!resposta.ok) throw new Error(dados.error || "Não foi possível entrar.");
+
+        await aplicarSessaoRecebida(dados);
+        fecharAuthModal();
+        mostrarToast(dados.user?.isAdmin ? "Administrador conectado." : "Login realizado com sucesso.");
+
+        if (dados.user?.isAdmin) await abrirAdminPanel();
+        else await abrirMinhaConta();
+    } catch (erro) {
+        mensagemAuth(erro.message || "Não foi possível entrar.", "error");
+    } finally {
+        botao.disabled = false;
+        botao.textContent = "Entrar";
+    }
+}
+
+async function criarConta(event) {
+    event.preventDefault();
+    const botao = document.getElementById("signupSubmit");
+
+    try {
+        botao.disabled = true;
+        botao.textContent = "Criando...";
+        limparMensagemAuth();
+
+        const name = document.getElementById("signupName").value.trim();
+        const email = document.getElementById("signupEmail").value.trim();
+        const password = document.getElementById("signupPassword").value;
+
+        const resposta = await fetch("/api/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({ name, email, password })
+        });
+        const dados = await resposta.json().catch(() => ({}));
+        if (!resposta.ok) throw new Error(dados.error || "Não foi possível criar a conta.");
+
+        await aplicarSessaoRecebida(dados);
+        fecharAuthModal();
+        mostrarToast("Conta criada e login realizado.");
+        await abrirMinhaConta();
+    } catch (erro) {
+        mensagemAuth(erro.message || "Não foi possível criar a conta.", "error");
+    } finally {
+        botao.disabled = false;
+        botao.textContent = "Criar minha conta";
+    }
+}
+
+async function sair() {
+    if (!supabaseClient) return;
+    await supabaseClient.auth.signOut();
+    usuarioAtual = null;
+    sessaoAtual = null;
+    usuarioEhAdmin = false;
+    fecharAccountModal();
+    fecharAdminPanel();
+    await atualizarEstadoConta();
+    mostrarToast("Você saiu da conta.");
+}
+
+async function abrirMinhaConta() {
+    if (!usuarioAtual) {
+        abrirAuthModal("login");
+        return;
+    }
+
+    const nome = usuarioAtual.user_metadata?.full_name || "Cliente Sutan";
+    document.getElementById("accountName").textContent = nome;
+    document.getElementById("accountEmail").textContent = usuarioAtual.email || "";
+    document.getElementById("accountModal").classList.add("active");
+    await atualizarEstadoConta();
+    await carregarMeusPedidos();
+}
+
+function fecharAccountModal() {
+    document.getElementById("accountModal").classList.remove("active");
+}
+
+async function carregarMeusPedidos() {
+    const container = document.getElementById("myOrdersList");
+    if (!usuarioAtual) {
+        container.innerHTML = '<p class="muted-center">Faça login para ver seus pedidos.</p>';
+        return;
+    }
+
+    container.innerHTML = '<p class="muted-center">Carregando...</p>';
+
+    try {
+        const resposta = await apiAutenticada("/api/my-orders");
+        const dados = await resposta.json().catch(() => ({}));
+        if (!resposta.ok) throw new Error(dados.error || "Não foi possível carregar os pedidos.");
+
+        const pedidos = dados.orders || [];
+        if (!pedidos.length) {
+            container.innerHTML = '<p class="muted-center">Você ainda não criou nenhum pedido.</p>';
+            return;
+        }
+
+        container.innerHTML = pedidos.map(pedido => `
+            <div class="my-order">
+                <div>
+                    <div class="my-order-code">${escapeHtml(pedido.order_code)}</div>
+                    <div class="my-order-meta">${formatarData(pedido.created_at)}</div>
+                </div>
+                <div class="my-order-total">
+                    ${moeda(Number(pedido.total))}
+                    <div class="order-status">${escapeHtml(pedido.status)}</div>
+                </div>
+            </div>
+        `).join("");
+
+    } catch (erro) {
+        container.innerHTML = `<p class="muted-center">${escapeHtml(erro.message)}</p>`;
+    }
+}
+
+function escapeHtml(valor) {
+    return String(valor ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function formatarData(data) {
+    try {
+        return new Intl.DateTimeFormat("pt-BR", {
+            dateStyle: "short",
+            timeStyle: "short"
+        }).format(new Date(data));
+    } catch (_) {
+        return "";
+    }
+}
+
+
+let adminPedidoAtual = null;
+
+async function abrirAdminPanel() {
+    if (!usuarioAtual) {
+        abrirAuthModal("login");
+        return;
+    }
+    await atualizarEstadoConta();
+    if (!usuarioEhAdmin) {
+        mostrarToast("Esta conta não possui acesso administrativo.");
+        return;
+    }
+    fecharAccountModal();
+    document.getElementById("adminModal").classList.add("active");
+    await carregarAdminDashboard();
+
+    const params = new URLSearchParams(location.search);
+    const pedido = params.get("pedido");
+    if (pedido) {
+        document.getElementById("adminOrderSearch").value = pedido.toUpperCase();
+        await consultarAdminPedido(pedido);
+    }
+}
+
+function fecharAdminPanel() {
+    document.getElementById("adminModal").classList.remove("active");
+}
+
+async function carregarAdminDashboard() {
+    if (!usuarioEhAdmin) return;
+    try {
+        const resposta = await apiAutenticada("/api/admin-dashboard");
+        const dados = await resposta.json().catch(() => ({}));
+        if (!resposta.ok) throw new Error(dados.error || "Não foi possível carregar o painel.");
+
+        const m = dados.metrics || {};
+        document.getElementById("admUnique").textContent = m.uniqueVisitors ?? 0;
+        document.getElementById("admVisits").textContent = m.totalVisits ?? 0;
+        document.getElementById("admToday").textContent = m.visitorsToday ?? 0;
+        document.getElementById("admUsers").textContent = m.registeredUsers ?? 0;
+        document.getElementById("admOrders").textContent = m.orders ?? 0;
+        document.getElementById("admValue").textContent = moeda(Number(m.orderValue || 0));
+        document.getElementById("admNewOrders").textContent = `${m.newOrders ?? 0} novos`;
+
+        const pedidos = dados.orders || [];
+        const orderBody = document.getElementById("adminOrdersBody");
+        orderBody.innerHTML = pedidos.length ? pedidos.map(o => `
+            <tr class="admin-clickable" onclick="consultarAdminPedido('${escapeHtml(o.order_code)}')">
+                <td class="admin-code">${escapeHtml(o.order_code)}</td>
+                <td>${escapeHtml(o.customer_name)}<br><small>${escapeHtml(o.customer_email)}</small></td>
+                <td><span class="admin-role">${escapeHtml(o.status)}</span></td>
+                <td>${moeda(Number(o.total))}</td>
+                <td>${formatarData(o.created_at)}</td>
+            </tr>`).join("") : '<tr><td colspan="5">Nenhum pedido cadastrado.</td></tr>';
+
+        const users = dados.users || [];
+        const usersBody = document.getElementById("adminUsersBody");
+        usersBody.innerHTML = users.length ? users.map(u => `
+            <tr>
+                <td>${escapeHtml(u.full_name || "Cliente Sutan")}</td>
+                <td>${escapeHtml(u.email || "")}</td>
+                <td><span class="admin-role">${escapeHtml(u.role || "customer")}</span></td>
+                <td>${formatarData(u.created_at)}</td>
+            </tr>`).join("") : '<tr><td colspan="4">Nenhuma conta cadastrada.</td></tr>';
+    } catch (erro) {
+        mostrarToast(erro.message || "Erro ao carregar o painel.");
+    }
+}
+
+async function buscarAdminPedido(event) {
+    event.preventDefault();
+    await consultarAdminPedido(document.getElementById("adminOrderSearch").value);
+}
+
+async function consultarAdminPedido(codigo) {
+    codigo = String(codigo || "").trim().toUpperCase();
+    document.getElementById("adminOrderSearch").value = codigo;
+    const box = document.getElementById("adminOrderDetail");
+    box.innerHTML = '<div class="admin-empty">Consultando pedido...</div>';
+
+    try {
+        const resposta = await apiAutenticada("/api/admin-order?id=" + encodeURIComponent(codigo));
+        const dados = await resposta.json().catch(() => ({}));
+        if (!resposta.ok) throw new Error(dados.error || "Pedido não encontrado.");
+        adminPedidoAtual = dados.order;
+        renderAdminPedido(adminPedidoAtual);
+    } catch (erro) {
+        adminPedidoAtual = null;
+        box.innerHTML = `<div class="admin-valid admin-invalid">✕ ID não confirmado</div><p>${escapeHtml(erro.message)}</p>`;
+    }
+}
+
+function renderAdminPedido(o) {
+    const box = document.getElementById("adminOrderDetail");
+    box.innerHTML = `
+        <div class="admin-valid">✓ ID verdadeiro — gravado no banco</div>
+        <div class="admin-detail-grid">
+            <div class="admin-detail-box"><span>ID oficial</span><strong class="admin-code">${escapeHtml(o.orderCode)}</strong></div>
+            <div class="admin-detail-box"><span>Data</span><strong>${formatarData(o.createdAt)}</strong></div>
+            <div class="admin-detail-box"><span>Cliente</span><strong>${escapeHtml(o.customerName)}</strong><br><small>${escapeHtml(o.customerEmail)}</small></div>
+            <div class="admin-detail-box"><span>Status</span><strong>${escapeHtml(o.status)}</strong></div>
+        </div>
+        <div class="admin-items">${(o.items || []).map(i => `
+            <div class="admin-item">
+                <div><strong>${escapeHtml(i.nome)}</strong><br><small>${moeda(Number(i.preco))} cada</small></div>
+                <div>x${Number(i.quantidade)}</div>
+                <strong>${moeda(Number(i.subtotal))}</strong>
+            </div>`).join("")}</div>
+        <div class="admin-total"><span>TOTAL OFICIAL</span><span>${moeda(Number(o.total))}</span></div>
+        <div class="admin-status">
+            <label for="adminStatusSelect">Status:</label>
+            <select id="adminStatusSelect">
+                <option value="novo">Novo</option>
+                <option value="confirmado">Confirmado</option>
+                <option value="concluido">Concluído</option>
+                <option value="cancelado">Cancelado</option>
+            </select>
+            <button class="btn" type="button" onclick="salvarAdminStatus()">Salvar status</button>
+        </div>`;
+    document.getElementById("adminStatusSelect").value = o.status;
+}
+
+async function salvarAdminStatus() {
+    if (!adminPedidoAtual) return;
+    try {
+        const status = document.getElementById("adminStatusSelect").value;
+        const resposta = await apiAutenticada("/api/admin-order", {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ orderCode: adminPedidoAtual.orderCode, status })
+        });
+        const dados = await resposta.json().catch(() => ({}));
+        if (!resposta.ok) throw new Error(dados.error || "Não foi possível atualizar o pedido.");
+        adminPedidoAtual = dados.order;
+        renderAdminPedido(adminPedidoAtual);
+        await carregarAdminDashboard();
+        mostrarToast("Status atualizado.");
+    } catch (erro) {
+        mostrarToast(erro.message || "Erro ao atualizar o status.");
+    }
+}
+
+function montarMensagemWhatsAppPedido(pedido) {
+    let mensagem = "Olá! Quero finalizar meu pedido na Perfumaria Sutan.\n\n";
+    mensagem += `🔐 ID OFICIAL: ${pedido.orderCode}\n`;
+    mensagem += `Cliente: ${pedido.customerName || pedido.customerEmail}\n\n`;
+
+    pedido.items.forEach(item => {
+        mensagem += `• ${item.nome} x${item.quantidade} — ${moeda(Number(item.subtotal))}\n`;
+    });
+
+    mensagem += `\n💰 TOTAL OFICIAL: ${moeda(Number(pedido.total))}\n`;
+    mensagem += "\nEste pedido foi registrado no site. Para segurança, confira o ID no painel administrativo antes de confirmar qualquer valor.";
+
+    if (location.protocol.startsWith("http")) {
+        mensagem += `\n\nVerificação no site: ${location.origin}/?admin=1&pedido=${encodeURIComponent(pedido.orderCode)}`;
+    }
+
+    return mensagem;
+}
+
+async function finalizarPedidoWhatsAppSeguro() {
+    if (carrinho.length === 0) {
+        mostrarToast("Seu carrinho está vazio.");
+        return;
+    }
+
+    if (!usuarioAtual) {
+        abrirAuthModal("login");
+        mensagemAuth("Entre na sua conta para gerar um ID oficial de pedido.", "info");
+        return;
+    }
+
+    const janelaWhatsApp = window.open("about:blank", "_blank");
+    if (janelaWhatsApp) {
+        try {
+            janelaWhatsApp.document.write("<p style='font-family:Arial;padding:30px'>Registrando seu pedido...</p>");
+        } catch (_) {}
+    }
+
+    try {
+        const resposta = await apiAutenticada("/api/create-order", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ items: itensDoCarrinhoParaApi() })
+        });
+
+        const pedido = await resposta.json().catch(() => ({}));
+        if (!resposta.ok || !pedido.orderCode) {
+            throw new Error(pedido.error || "Não foi possível registrar o pedido.");
+        }
+
+        ultimoPedido = pedido;
+
+        carrinho = [];
+        salvarCarrinho();
+        atualizarCarrinho();
+        fecharPaineisLaterais();
+        mostrarPedidoCriado(pedido);
+
+        const mensagem = montarMensagemWhatsAppPedido(pedido);
+        const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+
+        if (janelaWhatsApp) {
+            janelaWhatsApp.location.replace(url);
+        } else {
+            window.location.href = url;
+        }
+
+    } catch (erro) {
+        if (janelaWhatsApp) janelaWhatsApp.close();
+        mostrarToast(erro.message || "Não foi possível criar o pedido.");
+    }
+}
+
+function mostrarPedidoCriado(pedido) {
+    document.getElementById("createdOrderCode").textContent = pedido.orderCode;
+    document.getElementById("createdOrderTotal").textContent = moeda(Number(pedido.total));
+    document.getElementById("orderCreatedModal").classList.add("active");
+}
+
+function fecharPedidoCriado() {
+    document.getElementById("orderCreatedModal").classList.remove("active");
+}
+
+function abrirWhatsAppUltimoPedido() {
+    if (!ultimoPedido) return;
+    const mensagem = montarMensagemWhatsAppPedido(ultimoPedido);
+    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+}
+
+async function copiarIdUltimoPedido() {
+    if (!ultimoPedido?.orderCode) return;
+    try {
+        await navigator.clipboard.writeText(ultimoPedido.orderCode);
+        mostrarToast("ID copiado.");
+    } catch (_) {
+        mostrarToast(`ID: ${ultimoPedido.orderCode}`);
+    }
+}
+
+function gerarVisitorId() {
+    const chave = "sutanVisitorId";
+    let id = localStorage.getItem(chave);
+    if (id && /^[a-zA-Z0-9_-]{16,80}$/.test(id)) return id;
+
+    if (window.crypto?.randomUUID) {
+        id = window.crypto.randomUUID().replaceAll("-", "");
+    } else {
+        id = `${Date.now()}_${Math.random().toString(36).slice(2)}_${Math.random().toString(36).slice(2)}`;
+    }
+
+    localStorage.setItem(chave, id);
+    return id;
+}
+
+async function registrarVisita() {
+    try {
+        await fetch("/api/track-visit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ visitorId: gerarVisitorId() }),
+            keepalive: true
+        });
+    } catch (_) {
+        // Métrica não deve impedir o funcionamento da loja.
+    }
+}
+
+/* ==========================================================
+   NEWSLETTER
+========================================================== */
+
+function inscrever(event) {
+
+    event.preventDefault();
+
+
+    const email =
+        document
+        .getElementById("email")
+        .value;
+
+
+    mostrarToast(
+        `Obrigado! ${email} foi cadastrado.`
+    );
+
+
+    document
+        .getElementById("email")
+        .value = "";
+
+}
+
+
+/* ==========================================================
+   MENU MOBILE
+========================================================== */
+
+function toggleMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.toggle("active");
+
+}
+
+
+function fecharMenu() {
+
+    document
+        .getElementById("menu")
+        .classList.remove("active");
+
+}
+
+
+/* ==========================================================
+   TECLA ESC
+========================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            fecharModal();
+            fecharPaineisLaterais();
+            fecharAuthModal();
+            fecharAccountModal();
+            fecharAdminPanel();
+            fecharPedidoCriado();
+            fecharMenu();
+
+        }
+
+    }
+);
+
+
+/* ==========================================================
+   FECHAR MODAL CLICANDO FORA
+========================================================== */
+
+document
+    .getElementById("productModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+
+                fecharModal();
+
+            }
+
+        }
+    );
+
+
+["authModal", "accountModal", "adminModal", "orderCreatedModal"].forEach(id => {
+    document.getElementById(id).addEventListener("click", function(event) {
+        if (event.target === this) {
+            this.classList.remove("active");
+        }
+    });
+});
+
+
+/* ==========================================================
+   INICIALIZAÇÃO
+========================================================== */
+
+mostrarDestaques();
+mostrarProdutos();
+atualizarCarrinho();
+atualizarFavoritos();
+registrarVisita();
+inicializarLogin();
+
+</script>
+
+</body>
+</html>
